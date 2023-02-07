@@ -1,0 +1,8 @@
+
+.show-notification{
+    position: fixed;
+    right: 20px;
+    animation-name: show-toast;
+    animation-duration: 4s;
+    z-index: 99;
+}
