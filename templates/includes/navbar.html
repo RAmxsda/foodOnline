@@ -33,7 +33,8 @@
                             <a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'logout' %}">Logout</a>
                             <a class="cs-color cs-popup-joinus-btn login-popup"  href="{% url 'myAccount' %}">My Account</a>
                             {% else %}
-                            <a class="cs-color cs-popup-joinus-btn login-popup" data-target="#sign-in" data-toggle="modal" href="{% url 'login' %}">Login </a>
+                            <a class="cs-color cs-popup-joinus-btn login-popup"  href="{% url 'login' %}">Login </a>
+
                             <span><a class="cs-color cs-popup-joinus-btn login-popup ml-0" href="{% url 'registerUser' %}">/Register</a></span>
                             <a class="get-start-btn" href="{% url 'registerVendor' %}">
                                 Register
