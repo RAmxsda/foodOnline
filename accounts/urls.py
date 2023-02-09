@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path,include
+
 from . import views
 
 
@@ -10,11 +11,13 @@ urlpatterns = [
     path('myAccount/',views.myAccount, name='myAccount'),
     path('cust-dashboard/', views.custDashboard, name='custDashboard'),
     path('vendor-dashboard/', views.vendorDashboard, name='vendorDashboard'),
-
+    path('',views.myAccount),
 
     path('activate/<uidb64>/<token>/', views.activate, name='activate'),
 
     path('forgotPassword/',views.forgotPassword,name='forgotPassword'),
     path('resetpassword_validate/<uidb64>/<token>/', views.resetpassword_validate, name='resetpassword_validate'),
     path('resetPassword/', views.resetPassword, name='resetPassword'),
+
+    path('vendor/',include('vendor.urls'))
 ]

@@ -13,6 +13,7 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from django.core.mail import EmailMessage
+from vendor.models import *
 # Create your views here.
 
 
@@ -152,6 +153,7 @@ def custDashboard(request):
 @login_required(login_url='login')
 @user_passes_test(check_role_vendor)
 def vendorDashboard(request):
+    
     return render(request,'accounts/vendorDashboard.html')
 
 @login_required(login_url='login')

@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+Hi {{user.first_name}},
+
+{% if is_approved %}
+Congratulation! your resturant has been approved by our admin team(FoodOnline).
+
+{% else %}
+Sorry! we can't approved your resturant at the moment.Please contaact us info@foodonline.com
+{% endif %}
+
+
+{% endautoescape %}
