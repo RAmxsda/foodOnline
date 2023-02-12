@@ -24,7 +24,7 @@
                                 </figure>
                             </div>
                             <div class="text-holder">
-                                <span class="restaurant-title">{{ vendor.vendor_name }} {% if not vendor.is_open %}[Closed]{% endif %}</span>
+                                <span class="restaurant-title">{{ vendor.vendor_name }} {% if not vendor.is_open %}[Closed]{% else %}[Open]{% endif %}</span>
                                 <div class="text">
                                     {% if vendor.user_profile.address %}
                                     <i class="icon-location"></i>
@@ -40,6 +40,7 @@
                                 <li>
                                     <a href="#" class="reviews-sortby-active">
                                         <span>Today :</span>
+                                        
                                         {% for i in current_opening_hours %}
                                         <span>{% if i.is_closed %}Closed{% else %}{{ i.from_hour }} - {{ i.to_hour }}{% endif %}</span>
                                         
@@ -103,7 +104,7 @@
                                                 <div class="image-holder"> <img src="{{ food.image.url }}" alt=""></div>
                                                 <div class="text-holder">
                                                     <h6>{{ food }}</h6>
-                                                    <span>{{ food.description |truncatewords:"10"}}</span>
+                                                    <span>{{ food.description }}</span>
                                                 </div>
                                                 <div class="price-holder">
                                                     <span class="price">${{ food.price }}</span>
