@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'orders.request_object.RequestObjectMiddleware', #custom middleware to create the access the objects in models.py
 ]
 
 ROOT_URLCONF = 'foodOnline.urls'
@@ -73,6 +74,7 @@ TEMPLATES = [
                 'accounts.context_processors.get_vendor',
                 'accounts.context_processors.get_user_profile',
                 'accounts.context_processors.get_google_api',
+                'accounts.context_processors.get_paypal_client_id',
                 'marketplace.context_processors.get_cart_counter',
                 'marketplace.context_processors.get_cart_amounts',
                 
@@ -162,3 +164,6 @@ DEFAULT_FROM_EMAIL = 'foodOnline Marketplace <noreply@foodonline.com>'
 
 
 GOOGLE_API_KEY = 'AIzaSyC4yTudrg9pTcB2khAgrbCMBfVvbviOhVU'
+
+PAYPAL_CLIENT_ID=config('PAYPAL_CLIENT_ID')
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
